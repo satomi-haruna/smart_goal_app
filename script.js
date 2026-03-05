@@ -26,10 +26,8 @@ const goalList = document.querySelector(".goalList");
 // 挿入する子要素を定義
 const goalCard = document.querySelector(".goalCard");
 
-// クリックを検出
-addButton.addEventListener("click", () => {
-// // クリックされたら実行
-  console.log(input.value);
+// 新しい目標グループを作成　オブジェクト
+const newGoal = {
   // 新しいCardを作る、入力された値のテキスト要素を作成
   const newCard = document.createElement("div");
   newCard.className = "goalCard";
@@ -50,11 +48,20 @@ addButton.addEventListener("click", () => {
   //   <span class="goalTitle">サンプル目標</span>
   //   <button class="deleteBtn">×</button>
   // </div>
+};
 
+// クリックを検出
+addButton.addEventListener("click", () => {
+// // クリックされたら実行
+  console.log(input.value);
+  // 新しい目標グループを呼び出し
+  newGoal.login();
   // 親要素の末尾に追加
   goalList.appendChild(newCard);
   newCard.appendChild(newInput);
   newCard.appendChild(newSpan);
   newCard.appendChild(newButton);
+
+  // 
 });
 
