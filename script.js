@@ -54,6 +54,11 @@ function createGoalCard(text) {
   newCard.appendChild(newSpan);
   newCard.appendChild(newButton);
 
+  // 新しく作成したカードに削除機能を持たせる
+  newButton.addEventListener("click", () => {
+    newCard.remove();
+  });
+
   // 完成したカードを返す
   return newCard;
 };
@@ -75,4 +80,25 @@ addButton.addEventListener("click", () => {
     input.value = "";
   }
 });
+
+
+// 下記は不要に。　新しくカードを作成した時点で削除機能を持たせる
+// deleteボタンを定義
+// すべてのdeleteボタンを取得した後、一つ一つを判別できるようにする
+// const deleteBtns = document.querySelectorAll(".deleteBtn");
+
+// // for (初期化式; 条件式; 変化式){
+// //   実行する文1;
+// //   実行する文2;
+// //   ...
+// // }
+
+// for (let i = 0; i < deleteBtns.length; i++) {
+//   // deleteボタンのクリック検出
+//   deleteBtns[i].addEventListener("click", () => {
+//     // console.log("削除ボタンが押されたよ");
+//     // 押下したボタンの親要素を削除
+//     deleteBtns[i].parentNode.remove();
+//   },false);
+// };
 
